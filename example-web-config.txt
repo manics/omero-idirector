@@ -1,11 +1,13 @@
-config set omero.web.server_list '[["nightshade.openmicroscopy.org", 4064, "omero"]]'
+config set omero.web.server_list '[["idr.openmicroscopy.org", 4064, "idr"]]'
 config set omero.web.debug true
 config set omero.web.check_version false
 config set omero.web.application_server.host "0.0.0.0"
 
-config append omero.web.apps '"omero_shrtn"'
-config set omero.web.shrtn.auto.types '["Project", "Screen"]'
-# Auto-lookups must be 4 characters exactly
-config set omero.web.shrtn.auto.validre '\w{4}'
-# Match start of project/screen name against the short link
-config set omero.web.shrtn.auto.matchre '{u}.*'
+config append omero.web.apps '"omero_idirector"'
+
+# Configure idirector to redirect /idr/NNNN to projects or screens with
+# names beginning idr-NNNN-
+config set omero.web.idirector.prefix idr
+config set omero.web.idirector.types '["Project", "Screen"]'
+config set omero.web.idirector.validre '\d{4}$'
+config set omero.web.idirector.match 'idr{u}-%'

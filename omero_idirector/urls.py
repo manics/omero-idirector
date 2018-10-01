@@ -9,5 +9,5 @@ urlpatterns = patterns(
     'django.views.generic.simple',
 
     # Expand a shortened link
-    url(r'^(?P<u>.+)$', views.unshrtn, name="unshrtn"),
+    url(r'^(?P<u>.+)$', views.idirector, name="idirector"),
 )

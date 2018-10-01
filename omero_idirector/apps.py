@@ -20,9 +20,9 @@
 
 
 from django.apps import AppConfig
-import shrtn_settings
+import idirector_settings
 
 
-class ShrtnAppConfig(AppConfig):
-    name = "omero_shrtn"
-    label = shrtn_settings.SHRTN_PREFIX
+class IdirectorAppConfig(AppConfig):
+    name = "omero_idirector"
+    label = idirector_settings.IDIRECTOR_PREFIX
