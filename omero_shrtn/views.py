@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.http import Http404
-from django.shortcuts import redirect, reverse
+# Importing django.shortcuts.reverse breaks the app whereas
+# django.core.urlresolvers seems to work
+from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 
 from omeroweb.webclient.decorators import login_required
 
