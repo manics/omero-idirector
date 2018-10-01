@@ -25,5 +25,4 @@ import shrtn_settings
 
 class ShrtnAppConfig(AppConfig):
     name = "omero_shrtn"
-    #label = "shrtn"
     label = shrtn_settings.SHRTN_PREFIX

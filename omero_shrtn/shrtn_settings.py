@@ -16,19 +16,33 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import json
 import sys
-import os
 
-from django.conf import settings
 from omeroweb.settings import process_custom_settings, report_settings
 
 
 # load settings
 SHRTN_SETTINGS_MAPPING = {
     'omero.web.shrtn.namespace':
-        ['SHRTN_NAMESPACE', 'openmicroscopy.org/omero/web/shrtn', str, None],
+        ['SHRTN_NAMESPACE', 'openmicroscopy.org/omero/web/shrtn', str,
+         'Shrtn map-annotation namespace'],
     'omero.web.shrtn.prefix':
-        ['SHRTN_PREFIX', 'shrtn', str, None],
+        ['SHRTN_PREFIX', 'shrtn', str,
+         'Application prefix for shrtn URLs'],
+    'omero.web.shrtn.auto.types':
+        ['SHRTN_AUTO_TYPES', [], json.loads,
+         ('List of OMERO types (e.g. ["Screen", "Project"]) to be searched '
+          'for automatic shortened lookups')],
+    'omero.web.shrtn.auto.validre':
+        ['SHRTN_VALIDRE', '', str,
+         ('Regular expression that shortened link must match to be considered '
+          'for automatic lookups')],
+    'omero.web.shrtn.auto.matchre':
+        ['SHRTN_MATCHRE', '', str,
+         ('Regular expression containing the shortened link that OMERO '
+          'object names will be matched against. Must contain `{u}` which '
+          'will be replaced by the short-link passed by the client')],
 }
 
 
