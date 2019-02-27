@@ -39,6 +39,19 @@ For example, to automatically redirect /idr/NNNN projects or screens with names 
     $ omero config set omero.web.idirector.match 'idr{u}-%'
 
 
+Release process
+---------------
+
+Use `bumpversion
+<https://pypi.org/project/bump2version/>`_ to increment the version, commit and tag the repo.
+
+::
+
+    $ bumpversion patch
+    $ git push origin master
+    $ git push --tags
+
+
 License
 -------
 
