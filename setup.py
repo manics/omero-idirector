@@ -31,7 +31,7 @@ def read(fname):
 VERSION = '0.1.0'
 
 
-setup(name="omero-shrtn",
+setup(name="omero-idirector",
       packages=find_packages(exclude=['ez_setup']),
       version=VERSION,
       description="A Python plugin for OMERO.web",
